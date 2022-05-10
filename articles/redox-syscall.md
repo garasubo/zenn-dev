@@ -144,7 +144,7 @@ pub unsafe fn init() {
 `wrmsr`命令でMSR（Model Specific Register）というレジスタに値を書き込みます。
 
 `syscall_cs_ss_base`はsyscallが呼ばれたときに使われるコードセグメントとスタックセグメントを指定するためのセグメントセレクタです。
-コードセグメントはIA32_STAR[31:16]の設定値で、でスタックセグメントはIA32_STAR[31:16]の設定値+8の値となります。そのため、GDTではこの２つのセグメントは連続しています。
+コードセグメントはIA32_STAR[47:32]の設定値で、でスタックセグメントはIA32_STAR[47:32]の設定値+8の値となります。そのため、GDTではこの２つのセグメントは連続しています。
 逆に`sysret_cs_ss_base`はsysretが呼ばれたときに使われるコードセグメントとスタックセグメントを指定するためのセグメントセレクタです。
 実際のコードセグメントはIA32_STAR[63:48]の設定値の+16でスタックセグメントはIA32_STAR[63:48]の設定値+8の値となり、その１つ手前のインデックスを使っています。
 
@@ -535,7 +535,7 @@ pub fn close(fd: FileHandle) -> Result<usize> {
 }
 ```
 
-`context`というのはコンテキストスイッチのコンテキストでカーネルの様々な状態が格納されているものです。コンテキストの中には現在開いているマップが`Vec`で管理されています。
+`context`というのはコンテキストスイッチのコンテキストでカーネルの様々な状態が格納されているものです。コンテキストの中には現在開いているファイルが`Vec`で管理されています。
 `remove_file`の定義はこうなっています。
 
 ```rust
@@ -639,7 +639,7 @@ pub fn open(path: &str, flags: usize) -> Result<FileHandle> {
 
 ## 参考になる資料
 
-- [opv6](https://hikalium.github.io/opv86/)
+- [opv86](https://hikalium.github.io/opv86/)
 - [Intel SDM Vol.3 Chapter 5.8](https://www.intel.co.jp/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-system-programming-manual-325384.pdf#G10.1604)
 - [Intel SDM Vol.4 Model-Specific Registers](https://www.intel.com/content/dam/develop/external/us/en/documents/335592-sdm-vol-4.pdf)
 - マイナビ出版「ゼロからのOS自作入門」　第20章　システムコール
