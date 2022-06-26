@@ -142,4 +142,12 @@ qemu-system-x86_64 \
 
 ### 開発Tips
 実はrust-analyzerとかにも対応しています。`make rust-analyzer`としてあげると`rust-project.json`というファイルができるので、これをrust-analyzerに読み込ませてあげるとコードジャンプなどができて便利です。
-VS Codeなどを使っている人は使ってみるといいと思います。
+VS Codeの場合、`.vscode/settings.json`に以下のような設定を加えると読み込んでくれます。
+```json
+{
+    "rust-analyzer.linkedProjects": [
+        "/path/to/rust-for-linux/rust-project.json"
+    ]
+}
+```
+
