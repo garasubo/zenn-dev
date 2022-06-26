@@ -2,8 +2,8 @@
 title: "Rust for Linuxを手元で試す"
 emoji: "📚"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: []
-published: false
+topics: [Rust, Linux]
+published: true
 ---
 
 RustをLinuxカーネルに組込みプロジェクト、Rust for Linuxが進行中です。
