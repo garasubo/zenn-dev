@@ -30,7 +30,7 @@ Rustでもお手軽に動かすライブラリとして、[rp-pico](https://crat
 
 ## ブートローダー
 Picoのブートプロセスはやや複雑で、Second Stage bootloaderというものを用いて自分のプログラムを起動する必要があります。
-Second stage bootloaderは公式のSDKでも提供されていて、さらにこのブートローダーをRust向けにラップした[rp2040_boot2]というものもあります。
+Second stage bootloaderは公式のSDKでも提供されていて、さらにこのブートローダーをRust向けにラップした[rp2040_boot2](https://github.com/rp-rs/rp2040-boot2)というものもあります。
 
 今回作りたいのはランタイムであって、ブートプロセスについてはこちらのブートローダーを使うことにします。
 
@@ -131,7 +131,9 @@ https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.htm
 ## コード
 以下が今回作成したコードです。Systickを使って1秒ごとにLEDを点滅させています。
 
-https://github.com/garasubo/my-pico-test/tree/blog-v1
+2023-12-13 追記: 初期化コードが間違っていたので修正しました
+
+https://github.com/garasubo/my-pico-test/tree/blog-v1.1
 
 
 ## おわりに
