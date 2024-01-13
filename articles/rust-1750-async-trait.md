@@ -2,8 +2,8 @@
 title: "Rust 1.75.0におけるtrait内のasync fn"
 emoji: "🐙"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: []
-published: false
+topics: ["Rust"]
+published: true
 ---
 
 2023年の12月28日にRust 1.75.0がリリースされました
@@ -100,5 +100,5 @@ object safetyを満たしていないtraitは`dyn Trait`としては使えなく
 - `async fn`を公開traitで使う場合、`Send`制約がつかないので`trait-variant`クレートを用いるか`Send`制約を明示的につける
 - dynamic dispatchは使えなくなる
 
-現状での制約が煩わしい場合は素直に`async_trait`クレートを使い続けるなど従来の方法を使うのがいいかもしれません。
+現状での制約が煩わしい場合は素直に`async-trait`クレートを使い続けるなど従来の方法を使うのがいいかもしれません。
 今回の更新は安定化への道のMVP1に相当するものだと思われるので、今後もアップデートが続き使い勝手がさらに良くなりそうです。今後の更新にも期待しましょう！
