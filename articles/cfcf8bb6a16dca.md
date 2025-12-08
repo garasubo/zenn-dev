@@ -2,8 +2,8 @@
 title: "低レイヤー開発者が注目すべきRustのアップデート 2025年版"
 emoji: "🕌"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: []
-published: false
+topics: ["Rust", "embedded"]
+published: true
 ---
 
 この記事は[Rust Advent Calendar 2025](https://qiita.com/advent-calendar/2025/rust)の8日目の記事です。
